@@ -286,15 +286,16 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
             }}></div>
           </button>
           
-          {/* Shopping Bag Icon */}
+           {/* Shopping Bag Icon */}
           <button 
             onClick={() => setIsCartOpen(true)}
             style={{
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              padding: '4px',
-              position: 'relative'
+              padding: '8px',
+              position: 'relative',
+              marginRight: '4px'
             }}>
             <div className="image" style={{
               backgroundImage: "url('https://static.motiffcontent.com/private/resource/image/1982ccf9cd9451b-bcbc54d8-7fa8-4df6-959c-22db0f1b259a.svg')", 
@@ -306,8 +307,8 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
             {cartItemCount > 0 && (
               <div style={{
                 position: 'absolute',
-                top: '-4px',
-                right: '-4px',
+                top: '0px',
+                right: '0px',
                 background: '#BFA46F',
                 color: '#FFFFFF',
                 borderRadius: '50%',
@@ -318,13 +319,13 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '2px solid #F9F5F0'
+                border: '2px solid #F9F5F0',
+                zIndex: 10
               }}>
                 {cartItemCount > 99 ? '99+' : cartItemCount}
               </div>
             )}
-          </button>
-          
+          </button>          
           {/* User Account */}
           <button style={{
             background: '#0F0F0F', 
