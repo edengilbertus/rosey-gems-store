@@ -1,0 +1,33 @@
+/* 3D Card Styles */
+.card-container {
+  perspective: 1000px;
+}
+
+.card-body {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-linear;
+}
+
+.card-item {
+  transition: transform 0.2s ease-linear;
+}
+
+/* Ensure proper layering */
+.card-container * {
+  transform-style: preserve-3d;
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateZ(0px);
+  }
+  50% {
+    transform: translateZ(10px);
+  }
+}
+
+/* Enhanced hover effects */
+.group\/card:hover .card-hover-effect {
+  animation: float 2s ease-in-out infinite;
+}
