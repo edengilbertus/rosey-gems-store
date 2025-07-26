@@ -207,7 +207,9 @@ const SearchResults = ({ searchQuery, searchResults, addToCart }) => {
               }}>
                 Can't find what you're looking for?
               </p>
-              <button style={{
+              <button
+                onClick={() => alert('Call our experts at +256 778 701307 for personalized assistance')}
+                style={{
                 background: '#BFA46F',
                 border: 'none',
                 borderRadius: '8px',

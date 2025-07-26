@@ -12,7 +12,7 @@ const QuickCheckout = () => {
 
   const handleContactConcierge = () => {
     console.log('Contacting concierge...');
-    alert('Concierge contact would open here');
+    alert('Call us at +256 778 701307 for personalized assistance');
   };
 
   return (

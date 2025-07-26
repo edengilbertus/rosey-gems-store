@@ -28,9 +28,12 @@ const Footer = () => {
           <div style={{color: '#FFFFFF', fontSize: '16px', fontWeight: 600, lineHeight: '24px', width: '111px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '24px'}}>
             Customer Care
           </div>
-          <div style={{width: '111px', marginTop: '0.5px', display: 'flex', alignItems: 'flex-start', minHeight: '20.0px'}}>
+          <div style={{width: '111px', marginTop: '0.5px', display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start', minHeight: '20.0px'}}>
             <div style={{color: 'rgba(255, 255, 255, 0.70)', lineHeight: '20px', width: '69px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px'}}>
               Contact Us
+            </div>
+            <div style={{color: '#BFA46F', lineHeight: '20px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px', fontSize: '14px', fontWeight: 600}}>
+              +256 778 701307
             </div>
           </div>
         </div>
