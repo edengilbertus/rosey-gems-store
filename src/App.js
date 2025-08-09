@@ -160,8 +160,8 @@ function App() {
     { id: 202, name: 'Round Acetate Specs', price: 'UGX 35,000', type: 'Eyewear', image: 'https://images.unsplash.com/photo-1527656855837-9fef0b80779c?q=80&w=1600&auto=format&fit=crop', collection: 'Classic', description: 'Retro round acetate frames for everyday wear.' },
     { id: 203, name: 'Blue Light Glasses', price: 'UGX 25,000', type: 'Eyewear', image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop', collection: 'Modern', description: 'Blue light filtering lenses to reduce eye strain.' },
     { id: 304, name: 'Photochromic Anti Blue Light Glasses', price: 'UGX 15,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`, collection: 'Modern', tag: 'New', description: 'Photochromic anti-blue light lenses in bold cat-eye frames. Multiple colorways available.' },
-    { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-1.jpg`, collection: 'Modern', tag: 'New', description: 'Luxury optical frames with subtle blue-light filter and premium detailing.' },
-    { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`, collection: 'Modern', tag: 'New', description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.' }
+    { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`, collection: 'Modern', tag: 'New', description: 'Luxury optical frames with subtle blue-light filter and premium detailing.' },
+    { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`, collection: 'Modern', tag: 'New', description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.' }
   ];
 
   // Search function

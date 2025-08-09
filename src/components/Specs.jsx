@@ -18,9 +18,8 @@ const eyewear = [
     description: 'Photochromic anti-blue light lenses in bold cat-eye frames. Color options include red, pink/tortoise, white and black.'
   },
   { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear',
-    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-1.jpg`,
+    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`,
     images: [
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-1.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-4.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-5.jpg`,
@@ -31,12 +30,10 @@ const eyewear = [
     description: 'Luxury optical frames with subtle blue-light filter and premium detailing.'
   },
   { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear',
-    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
+    image: `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`,
     images: [
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-9.jpg`,
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-20.jpg`
+      `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-3.jpg`
     ],
     tag: 'New',
     collection: 'Modern',
