@@ -8,8 +8,6 @@ const eyewear = [
   { id: 304, name: 'Photochromic Anti Blue Light Glasses', price: 'UGX 15,000', type: 'Eyewear',
     image: `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
     images: [
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-9.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-10.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-11.jpg`,
