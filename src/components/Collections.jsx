@@ -1,6 +1,40 @@
 import React, { useState } from 'react';
 import ProductCard from './ProductCard';
 
+// Highlighted earrings to feature above the collections grid
+const earringsData = [
+  {
+    id: 401,
+    name: 'Leaf Stud Earrings',
+    price: 'UGX 6,000',
+    type: 'Earrings',
+    image: `${process.env.PUBLIC_URL}/assets/earrings/leaf-stud-1.jpg`,
+    tag: 'New',
+    collection: 'Modern',
+    description: 'Leaf-inspired statement studs in multiple finishes.'
+  },
+  {
+    id: 402,
+    name: 'Sapphire Drop Earrings',
+    price: 'UGX 40,000',
+    type: 'Earrings',
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1600&auto=format&fit=crop',
+    tag: 'Featured',
+    collection: 'Modern',
+    description: 'Elegant drops with sapphire-blue stones.'
+  },
+  {
+    id: 403,
+    name: 'Aquamarine Stud Earrings',
+    price: 'UGX 35,000',
+    type: 'Earrings',
+    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop',
+    tag: 'Classic',
+    collection: 'Modern',
+    description: 'Premium studs with aquamarine tone.'
+  }
+];
+
 const collectionsData = [
   // Jewelry
   {
@@ -152,6 +186,30 @@ const Collections = ({ addToCart }) => {
         margin: '0 auto',
         padding: '0 clamp(16px, 4vw, 40px)'
       }}>
+        {/* Earrings Section (above collections) */}
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.7)',
+          backdropFilter: 'blur(12px)',
+          borderRadius: '16px',
+          border: '1px solid rgba(191, 164, 111, 0.2)',
+          padding: '24px',
+          marginBottom: '32px'
+        }}>
+          <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'12px'}}>
+            <h2 style={{ margin: 0, color: '#0F0F0F', fontSize: 'clamp(22px, 4vw, 28px)' }}>Earrings</h2>
+            <div style={{ color:'#BFA46F', fontWeight:600 }}>{earringsData.length} styles</div>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 'clamp(16px, 3vw, 24px)'
+          }}>
+            {earringsData.map((p) => (
+              <ProductCard key={p.id} product={p} addToCart={addToCart} />
+            ))}
+          </div>
+        </div>
+
         {/* Header Section */}
         <div style={{
           textAlign: 'center',
