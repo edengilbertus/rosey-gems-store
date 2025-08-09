@@ -182,7 +182,9 @@ function App() {
     { id: 405, name: 'Arm Cuffs', price: 'UGX 10,000', type: 'Bracelet', image: `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-1.jpg`, collection: 'Statement', tag: 'New', description: 'Sleek metallic arm cuffs set.', images: [
       `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-1.jpg`,
       `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-2.jpg`,
-      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-3.jpg`
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-3.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-4.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-5.jpg`
     ] },
     { id: 406, name: 'Beaded Bracelets', price: 'UGX 5,000', type: 'Bracelet', image: `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-1.jpg`, collection: 'Classic', tag: 'New', description: 'Colorful beaded bracelet set.', images: [
       `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-1.jpg`,
