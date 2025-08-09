@@ -6,9 +6,9 @@ const eyewear = [
   { id: 302, name: 'Color Changing Anti Blue Light Glasses (Gold)', price: 'UGX 25,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/anti-blue-gold.jpg`, collection: 'Modern', description: 'Photochromic anti-blue light lenses in a refined gold frame.' },
   { id: 303, name: 'Color Changing Anti Blue Light Glasses (Alt)', price: 'UGX 25,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/anti-blue-alt.jpg`, collection: 'Modern', description: 'Alternate colorway with the same blue light protection and color change.' },
   { id: 304, name: 'Photochromic Anti Blue Light Glasses', price: 'UGX 15,000', type: 'Eyewear',
-    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
+    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
     images: [
-      `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-9.jpg`,
       `${process.env.PUBLIC_URL}/assets/eyewear/image-10.jpg`,

@@ -159,7 +159,7 @@ function App() {
     { id: 201, name: 'Aviator Sunglasses', price: 'UGX 40,000', type: 'Eyewear', image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1600&auto=format&fit=crop', tag: 'New', collection: 'Modern', description: 'Classic aviator silhouette with tinted lenses.' },
     { id: 202, name: 'Round Acetate Specs', price: 'UGX 35,000', type: 'Eyewear', image: 'https://images.unsplash.com/photo-1527656855837-9fef0b80779c?q=80&w=1600&auto=format&fit=crop', collection: 'Classic', description: 'Retro round acetate frames for everyday wear.' },
     { id: 203, name: 'Blue Light Glasses', price: 'UGX 25,000', type: 'Eyewear', image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1600&auto=format&fit=crop', collection: 'Modern', description: 'Blue light filtering lenses to reduce eye strain.' },
-    { id: 304, name: 'Photochromic Anti Blue Light Glasses', price: 'UGX 15,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`, collection: 'Modern', tag: 'New', description: 'Photochromic anti-blue light lenses in bold cat-eye frames. Multiple colorways available.' }
+    { id: 304, name: 'Photochromic Anti Blue Light Glasses', price: 'UGX 15,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`, collection: 'Modern', tag: 'New', description: 'Photochromic anti-blue light lenses in bold cat-eye frames. Multiple colorways available.' }
   ];
 
   // Search function
