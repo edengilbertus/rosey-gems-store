@@ -171,6 +171,19 @@ function App() {
       `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-2.jpg`,
       `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-3.jpg`
     ] },
+    { id: 403, name: 'Pearl Necklace', price: 'UGX 10,000', type: 'Necklace', image: `${process.env.PUBLIC_URL}/assets/necklaces/pearl-necklace-1.jpg`, collection: 'Classic', tag: 'New', description: 'Delicate pearl necklace with five cascading drops.', images: [
+      `${process.env.PUBLIC_URL}/assets/necklaces/pearl-necklace-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/necklaces/pearl-necklace-2.jpg`
+    ] },
+    { id: 404, name: 'Pearl Needle Pins', price: 'UGX 5,000', type: 'Hair Accessory', image: `${process.env.PUBLIC_URL}/assets/pins/pearl-needle-pins-1.jpg`, collection: 'Bridal', tag: 'New', description: 'Set of pearl-tipped hair pins for elegant styling.', images: [
+      `${process.env.PUBLIC_URL}/assets/pins/pearl-needle-pins-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/pins/pearl-needle-pins-2.jpg`
+    ] },
+    { id: 405, name: 'Arm Cuffs', price: 'UGX 10,000', type: 'Bracelet', image: `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-1.jpg`, collection: 'Statement', tag: 'New', description: 'Sleek metallic arm cuffs set.', images: [
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-2.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-3.jpg`
+    ] },
     { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`, collection: 'Modern', tag: 'New', description: 'Luxury optical frames with subtle blue-light filter and premium detailing.' },
     { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`, collection: 'Modern', tag: 'New', description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.' }
   ];
