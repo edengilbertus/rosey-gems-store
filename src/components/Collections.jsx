@@ -286,7 +286,9 @@ const Collections = ({ addToCart }) => {
           textAlign: 'center',
           marginTop: '48px'
         }}>
-          <button style={{
+          <button 
+            onClick={() => setSelectedFilter('All')}
+            style={{
             background: '#BFA46F',
             border: 'none',
             borderRadius: '8px',
@@ -306,7 +308,7 @@ const Collections = ({ addToCart }) => {
             e.target.style.transform = 'translateY(0)';
           }}
           >
-            Load More Collections
+            Show All Collections
           </button>
         </div>
       </div>
