@@ -24,14 +24,14 @@ const earringsData = [
     description: 'Elegant drops with sapphire-blue stones.'
   },
   {
-    id: 403,
-    name: 'Aquamarine Stud Earrings',
-    price: 'UGX 35,000',
+    id: 402,
+    name: 'Pearl Drop Earrings',
+    price: 'UGX 15,000',
     type: 'Earrings',
-    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop',
-    tag: 'Classic',
-    collection: 'Modern',
-    description: 'Premium studs with aquamarine tone.'
+    image: `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-1.jpg`,
+    tag: 'New',
+    collection: 'Classic',
+    description: 'Elegant pearl drop earrings with shimmering accents.'
   }
 ];
 

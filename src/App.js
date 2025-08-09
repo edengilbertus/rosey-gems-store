@@ -166,6 +166,11 @@ function App() {
       `${process.env.PUBLIC_URL}/assets/earrings/leaf-stud-3.jpg`,
       `${process.env.PUBLIC_URL}/assets/earrings/leaf-stud-4.jpg`
     ] },
+    { id: 402, name: 'Pearl Drop Earrings', price: 'UGX 15,000', type: 'Earrings', image: `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-1.jpg`, collection: 'Classic', tag: 'New', description: 'Elegant pearl drop earrings with shimmering accents.', images: [
+      `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-2.jpg`,
+      `${process.env.PUBLIC_URL}/assets/earrings/pearl-drop-3.jpg`
+    ] },
     { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`, collection: 'Modern', tag: 'New', description: 'Luxury optical frames with subtle blue-light filter and premium detailing.' },
     { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`, collection: 'Modern', tag: 'New', description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.' }
   ];
