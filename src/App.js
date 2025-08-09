@@ -9,6 +9,7 @@ import Appointments from './components/Appointments';
 import LoyaltyGems from './components/LoyaltyGems';
 import QuickCheckout from './components/QuickCheckout';
 import Footer from './components/Footer';
+import LatestHighlights from './components/LatestHighlights';
 import { JewelryShowcase3D } from './components/JewelryShowcase3D';
 import Collections from './components/Collections';
 import NewArrivals from './components/NewArrivals';
@@ -247,6 +248,10 @@ function App() {
         return (
           <>
             <Welcome />
+            <LatestHighlights 
+              products={allProducts}
+              onOpenProduct={(product) => window.dispatchEvent(new CustomEvent('open-product-modal', { detail: { product } }))}
+            />
             <SearchBar onSearch={performSearch} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <button
