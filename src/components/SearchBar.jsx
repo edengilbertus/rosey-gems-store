@@ -2,46 +2,27 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 
 const SearchBar = ({ onSearch, searchQuery = '', setSearchQuery }) => {
-  const [localQuery, setLocalQuery] = useState(searchQuery);
   const [isFocused, setIsFocused] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    const query = localQuery.trim();
-    if (query) {
-      console.log('Searching for:', query); // Debug log
-      setIsSearching(true);
-      try {
-        if (onSearch) {
-          onSearch(query);
-        }
-        if (setSearchQuery) {
-          setSearchQuery(query);
-        }
-      } finally {
-        setTimeout(() => setIsSearching(false), 500); // Brief loading state
-      }
-    } else {
-      console.log('Empty search query'); // Debug log
+    const query = (searchQuery || '').trim();
+    if (setSearchQuery) setSearchQuery(query);
+    setIsSearching(true);
+    try {
+      if (onSearch) onSearch(query);
+    } finally {
+      setTimeout(() => setIsSearching(false), 300);
     }
   };
 
   const handleInputChange = (e) => {
-    setLocalQuery(e.target.value);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSearch(e);
-    }
+    if (setSearchQuery) setSearchQuery(e.target.value);
   };
 
   const handleClearSearch = () => {
-    setLocalQuery('');
-    if (setSearchQuery) {
-      setSearchQuery('');
-    }
+    if (setSearchQuery) setSearchQuery('');
   };
 
   return (
@@ -84,9 +65,8 @@ const SearchBar = ({ onSearch, searchQuery = '', setSearchQuery }) => {
         }}></div>
         <input
           type="text"
-          value={localQuery}
+          value={searchQuery}
           onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="Search for jewelry, bags, accessories, or collections..."
@@ -103,7 +83,7 @@ const SearchBar = ({ onSearch, searchQuery = '', setSearchQuery }) => {
             }
           }}
         />
-        {localQuery && (
+        {searchQuery && (
           <button 
             type="button" 
             onClick={handleClearSearch}

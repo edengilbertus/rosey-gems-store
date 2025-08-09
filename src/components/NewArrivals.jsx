@@ -5,56 +5,62 @@ const newArrivalsData = [
   {
     id: 1,
     name: 'Aurora Diamond Ring',
-    price: 'UGX 12,950,000',
+    price: 'UGX 12,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Just Arrived',
-    arrivalDate: '2024-01-15'
+    arrivalDate: '2024-01-15',
+    description: 'Delicate band with shimmering diamond-look center stone.'
   },
   {
     id: 2,
     name: 'Moonstone Pendant Necklace',
-    price: 'UGX 6,475,000',
+    price: 'UGX 60,000',
     type: 'Necklace',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'New',
-    arrivalDate: '2024-01-10'
+    arrivalDate: '2024-01-10',
+    description: 'Premium necklace with shimmering moonstone look.'
   },
   {
     id: 3,
     name: 'Ruby Chandelier Earrings',
-    price: 'UGX 8,325,000',
+    price: 'UGX 40,000',
     type: 'Earrings',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Limited Edition',
-    arrivalDate: '2024-01-08'
+    arrivalDate: '2024-01-08',
+    description: 'Premium earrings with ruby-red sparkle.'
   },
   {
     id: 4,
     name: 'Platinum Chain Bracelet',
-    price: 'UGX 7,400,000',
+    price: 'UGX 75,000',
     type: 'Bracelet',
     image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Trending',
-    arrivalDate: '2024-01-05'
+    arrivalDate: '2024-01-05',
+    description: 'Premium bracelet with a sleek chain design.'
   },
   {
     id: 5,
     name: 'Opal Cluster Ring',
-    price: 'UGX 5,180,000',
+    price: 'UGX 10,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Unique',
-    arrivalDate: '2024-01-03'
+    arrivalDate: '2024-01-03',
+    description: 'Iridescent opal-style stones clustered on a slim band.'
   },
   {
     id: 6,
     name: 'Aquamarine Stud Earrings',
-    price: 'UGX 3,885,000',
+    price: 'UGX 35,000',
     type: 'Earrings',
     image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Fresh',
-    arrivalDate: '2024-01-01'
+    arrivalDate: '2024-01-01',
+    description: 'Premium earrings with aquamarine tone.'
   }
 ];
 
@@ -97,6 +103,7 @@ const NewArrivals = ({ addToCart }) => {
         </div>
 
         {/* Featured New Arrival */}
+        {(() => { const featured = newArrivalsData[0]; return (
         <div style={{
           background: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(12px)',
@@ -131,7 +138,7 @@ const NewArrivals = ({ addToCart }) => {
               fontWeight: 700,
               marginBottom: '12px'
             }}>
-              Aurora Diamond Ring
+              {featured.name}
             </h2>
             <p style={{
               color: 'rgba(15, 15, 15, 0.7)',
@@ -139,7 +146,7 @@ const NewArrivals = ({ addToCart }) => {
               lineHeight: '1.6',
               marginBottom: '20px'
             }}>
-              A stunning centerpiece featuring a rare aurora diamond that captures and reflects light in mesmerizing rainbow hues. Handcrafted in 18k white gold with intricate detailing.
+              {featured.description || 'Premium new arrival piece.'}
             </p>
             <div style={{
               display: 'flex',
@@ -152,13 +159,13 @@ const NewArrivals = ({ addToCart }) => {
                 fontSize: '24px',
                 fontWeight: 700
               }}>
-                UGX 12,950,000
+                {featured.price}
               </span>
               <span style={{
                 color: 'rgba(15, 15, 15, 0.5)',
                 fontSize: '14px'
               }}>
-                Arrived January 15, 2024
+                Arrived {new Date(featured.arrivalDate || '2024-01-15').toLocaleDateString()}
               </span>
             </div>
             <button style={{
@@ -191,8 +198,8 @@ const NewArrivals = ({ addToCart }) => {
             overflow: 'hidden'
           }}>
             <img
-              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3"
-              alt="Aurora Diamond Ring"
+              src={featured.image}
+              alt={featured.name}
               style={{
                 width: '100%',
                 height: '100%',
@@ -201,6 +208,7 @@ const NewArrivals = ({ addToCart }) => {
             />
           </div>
         </div>
+        ); })()}
 
         {/* Sort Options */}
         <div style={{

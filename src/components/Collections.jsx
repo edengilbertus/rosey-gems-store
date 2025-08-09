@@ -6,11 +6,12 @@ const collectionsData = [
   {
     id: 1,
     name: 'Diamond Elegance Ring',
-    price: 'UGX 8,850,000',
+    price: 'UGX 15,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Premium',
-    collection: 'Bridal'
+    collection: 'Bridal',
+    description: 'Elegant diamond-look ring inspired by bridal classics.'
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const collectionsData = [
     type: 'Necklace',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: null,
-    collection: 'Vintage'
+    collection: 'Vintage',
+    description: 'Vintage-style pearl-look strand with elegant clasp.'
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const collectionsData = [
     type: 'Earrings',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'New',
-    collection: 'Modern'
+    collection: 'Modern',
+    description: 'Elegant drop earrings with sapphire-blue stones.'
   },
   {
     id: 4,
@@ -37,16 +40,18 @@ const collectionsData = [
     type: 'Bracelet',
     image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Luxury',
-    collection: 'Classic'
+    collection: 'Classic',
+    description: 'Classic gold-tone tennis bracelet with prong setting.'
   },
   {
     id: 5,
     name: 'Emerald Statement Ring',
-    price: 'UGX 11,100,000',
+    price: 'UGX 10,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Exclusive',
-    collection: 'Statement'
+    collection: 'Statement',
+    description: 'Bold emerald-tone centerpiece with smooth band.'
   },
   {
     id: 6,
@@ -55,7 +60,8 @@ const collectionsData = [
     type: 'Necklace',
     image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Trending',
-    collection: 'Modern'
+    collection: 'Modern',
+    description: 'Minimal pendant in a warm rose-gold tone.'
   },
   
   // Luxury Bags
@@ -66,7 +72,8 @@ const collectionsData = [
     type: 'Handbag',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Luxury',
-    collection: 'Modern'
+    collection: 'Modern',
+    description: 'Premium-feel leather handbag with structured silhouette.'
   },
   {
     id: 8,
@@ -75,7 +82,8 @@ const collectionsData = [
     type: 'Clutch',
     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Exclusive',
-    collection: 'Statement'
+    collection: 'Statement',
+    description: 'Textured crocodile pattern clutch with luxe clasp.'
   },
   {
     id: 9,
@@ -83,7 +91,8 @@ const collectionsData = [
     price: 'UGX 6,660,000',
     type: 'Satchel',
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
-    collection: 'Vintage'
+    collection: 'Vintage',
+    description: 'Old-school satchel with buckle closures and patina.'
   },
   {
     id: 10,
@@ -92,7 +101,8 @@ const collectionsData = [
     type: 'Clutch',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Glamorous',
-    collection: 'Bridal'
+    collection: 'Bridal',
+    description: 'Crystal-embellished clutch perfect for events.'
   },
   
   // Luxury Accessories
@@ -103,7 +113,8 @@ const collectionsData = [
     type: 'Watch',
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Premium',
-    collection: 'Statement'
+    collection: 'Statement',
+    description: 'Statement gold-tone watch with polished links.'
   },
   {
     id: 12,
@@ -112,7 +123,8 @@ const collectionsData = [
     type: 'Scarf',
     image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Elegant',
-    collection: 'Classic'
+    collection: 'Classic',
+    description: 'Soft silk-feel scarf with subtle sheen.'
   }
 ];
 

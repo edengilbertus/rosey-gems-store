@@ -9,17 +9,54 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     { 
       id: 14, 
       name: 'Designer Leather Handbag', 
-      price: 'UGX 8,880,000', 
+      price: 'UGX 95,000', 
       type: 'Handbag', 
       image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       tag: 'Luxury', 
       collection: 'Modern',
       description: 'Premium Italian leather handbag with gold-tone hardware'
     },
+    {
+      id: 101,
+      name: 'Cartoon Charm Tote',
+      price: 'UGX 40,000',
+      type: 'Tote',
+      image: `${process.env.PUBLIC_URL}/assets/totes/cartoon-charm-tote.jpg`,
+      tag: 'New Arrival',
+      collection: 'Casual',
+      description: 'Cute cartoon-accent tote with multi-pocket front and detachable charm. Lightweight and perfect for daily carry.'
+    },
+    {
+      id: 102,
+      name: 'Urban Nylon Tote - Charcoal',
+      price: 'UGX 40,000',
+      type: 'Tote',
+      image: `${process.env.PUBLIC_URL}/assets/totes/urban-nylon-charcoal.jpg`,
+      collection: 'Urban',
+      description: 'Water-resistant nylon tote with crossbody strap and external utility pockets for city commutes.'
+    },
+    {
+      id: 103,
+      name: 'Urban Nylon Tote - Stone',
+      price: 'UGX 40,000',
+      type: 'Tote',
+      image: `${process.env.PUBLIC_URL}/assets/totes/urban-nylon-stone.jpg`,
+      collection: 'Urban',
+      description: 'Neutral stone colorway of our lightweight nylon tote with roomy compartments.'
+    },
+    {
+      id: 104,
+      name: 'Urban Nylon Tote - Taupe',
+      price: 'UGX 40,000',
+      type: 'Tote',
+      image: `${process.env.PUBLIC_URL}/assets/totes/urban-nylon-taupe.jpg`,
+      collection: 'Urban',
+      description: 'Taupe variant with adjustable straps, side pockets, and compact pouch detail.'
+    },
     { 
       id: 15, 
       name: 'Crocodile Clutch Bag', 
-      price: 'UGX 12,950,000', 
+      price: 'UGX 85,000', 
       type: 'Clutch', 
       image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       tag: 'Exclusive', 
@@ -29,7 +66,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     { 
       id: 16, 
       name: 'Vintage Leather Satchel', 
-      price: 'UGX 6,660,000', 
+      price: 'UGX 66,600', 
       type: 'Satchel', 
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       collection: 'Vintage',
@@ -38,7 +75,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     { 
       id: 17, 
       name: 'Gold Chain Purse', 
-      price: 'UGX 5,550,000', 
+      price: 'UGX 55,500', 
       type: 'Purse', 
       image: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       tag: 'Trendy', 
@@ -48,7 +85,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     { 
       id: 18, 
       name: 'Designer Tote Bag', 
-      price: 'UGX 7,400,000', 
+      price: 'UGX 74,000', 
       type: 'Tote', 
       image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       collection: 'Modern',
@@ -57,7 +94,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     { 
       id: 19, 
       name: 'Evening Clutch with Crystals', 
-      price: 'UGX 4,625,000', 
+      price: 'UGX 46,250', 
       type: 'Clutch', 
       image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3', 
       tag: 'Glamorous', 
@@ -67,7 +104,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     {
       id: 26,
       name: 'Python Leather Shoulder Bag',
-      price: 'UGX 15,540,000',
+      price: 'UGX 95,000',
       type: 'Shoulder Bag',
       image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
       tag: 'Exotic',
@@ -77,7 +114,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     {
       id: 27,
       name: 'Silk Evening Bag',
-      price: 'UGX 3,700,000',
+      price: 'UGX 37,000',
       type: 'Evening Bag',
       image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
       tag: 'Elegant',
@@ -87,7 +124,7 @@ const Bags = ({ addToCart, removeFromCart, updateQuantity, cartItems }) => {
     {
       id: 28,
       name: 'Canvas Weekend Tote',
-      price: 'UGX 2,775,000',
+      price: 'UGX 27,750',
       type: 'Tote',
       image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
       collection: 'Modern',

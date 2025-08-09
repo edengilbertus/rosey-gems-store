@@ -144,6 +144,20 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
               }}>
               Bags
             </button>
+            <button 
+              onClick={() => setCurrentPage('specs')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: currentPage === 'specs' ? '#BFA46F' : '#0F0F0F',
+                fontWeight: currentPage === 'specs' ? 600 : 500,
+                fontSize: 'clamp(14px, 2vw, 16px)',
+                cursor: 'pointer',
+                padding: '8px 0',
+                borderBottom: currentPage === 'specs' ? '2px solid #BFA46F' : 'none'
+              }}>
+              Specs / Eye Wear
+            </button>
           </>
         )}
         
@@ -510,6 +524,35 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
             }}
           >
             Bags
+          </button>
+          <button 
+            onClick={() => {
+              setCurrentPage('specs');
+              setIsMenuOpen(false);
+            }}
+            style={{
+              background: currentPage === 'specs' ? 'rgba(191, 164, 111, 0.1)' : 'none',
+              border: 'none',
+              color: currentPage === 'specs' ? '#BFA46F' : '#0F0F0F',
+              fontWeight: currentPage === 'specs' ? 600 : 500,
+              fontSize: '16px',
+              cursor: 'pointer',
+              padding: '12px',
+              textAlign: 'left',
+              borderRadius: '8px'
+            }}
+            onMouseEnter={(e) => {
+              if (currentPage !== 'specs') {
+                e.target.style.backgroundColor = 'rgba(191, 164, 111, 0.1)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (currentPage !== 'specs') {
+                e.target.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            Specs / Eye Wear
           </button>
           
           <div style={{height: '1px', backgroundColor: 'rgba(191, 164, 111, 0.3)', margin: '8px 0'}}></div>

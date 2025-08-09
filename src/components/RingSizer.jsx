@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ARRingSizer from './ARRingSizer';
 import './RingSizer.css';
 
 const RingSizer = () => {
@@ -36,9 +37,11 @@ const RingSizer = () => {
     }
   };
 
-  const handleARSizing = () => {
-    console.log('Opening AR Ring Sizer...');
-    alert('AR Ring Sizer would open here in a real implementation');
+  const [arOpen, setArOpen] = useState(false);
+  const handleARSizing = () => setArOpen(true);
+  const handleARConfirm = (size) => {
+    setCurrentSize(size.size);
+    setArOpen(false);
   };
 
   return (
@@ -200,6 +203,7 @@ const RingSizer = () => {
           Try AR Sizing
         </div>
       </button>
+      <ARRingSizer open={arOpen} onClose={() => setArOpen(false)} onConfirm={handleARConfirm} />
     </div>
   );
 };

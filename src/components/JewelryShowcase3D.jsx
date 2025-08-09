@@ -4,25 +4,25 @@ import { JewelryCard3D } from "./JewelryCard3D";
 export const JewelryShowcase3D = ({ addToCart }) => {
   const jewelryItems = [
     {
-      id: 1,
-      title: "Diamond Solitaire Ring",
-      description: "Classic elegance with a brilliant cut diamond centerpiece",
-      price: "UGX 10,543,750",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3"
+      id: 101,
+      title: 'Cartoon Charm Tote',
+      description: 'Cute cartoon-accent tote with multi-pocket front and charm',
+      price: 'UGX 40,000',
+      image: `${process.env.PUBLIC_URL}/assets/totes/cartoon-charm-tote.jpg`
     },
     {
-      id: 2,
-      title: "Pearl Drop Earrings",
-      description: "Luxurious freshwater pearls with gold accents",
-      price: "UGX 3,311,250",
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3"
+      id: 102,
+      title: 'Urban Nylon Tote - Charcoal',
+      description: 'Water-resistant nylon tote with utility pockets',
+      price: 'UGX 40,000',
+      image: `${process.env.PUBLIC_URL}/assets/totes/urban-nylon-charcoal.jpg`
     },
     {
-      id: 3,
-      title: "Emerald Tennis Bracelet",
-      description: "Stunning emerald stones in an elegant tennis setting",
-      price: "UGX 11,840,000",
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3"
+      id: 103,
+      title: 'Urban Nylon Tote - Stone',
+      description: 'Lightweight nylon tote in stone colorway',
+      price: 'UGX 40,000',
+      image: `${process.env.PUBLIC_URL}/assets/totes/urban-nylon-stone.jpg`
     }
   ];
 
@@ -60,8 +60,7 @@ export const JewelryShowcase3D = ({ addToCart }) => {
           maxWidth: '600px',
           margin: '0 auto'
         }}>
-          Experience our handcrafted jewelry pieces with an immersive 3D preview. 
-          Hover over each piece to explore the details.
+          Explore our featured tote collection.
         </p>
       </div>
       

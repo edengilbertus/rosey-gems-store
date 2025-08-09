@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './LoyaltyGems.css';
 
 const LoyaltyGems = () => {
+  const [points, setPoints] = useState(() => {
+    try { return parseInt(localStorage.getItem('loyaltyPoints') || '1450', 10); } catch { return 1450; }
+  });
+  const nextTier = 2000;
+  const addPoints = (v) => setPoints(p => Math.max(0, p + v));
+  useEffect(() => { try { localStorage.setItem('loyaltyPoints', String(points)); } catch {} }, [points]);
+  const progress = Math.min(100, Math.round((points / nextTier) * 100));
   return (
     <div className="inner-border" style={{background: 'rgba(255, 255, 255, 0.70)', boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.05), 0px 0px 0px 0px rgba(0, 0, 0, 0.00), 0px 0px 0px 0px rgba(0, 0, 0, 0.00)', backdropFilter: 'blur(12px)', '--border-style': 'solid', '--border-color': 'rgba(191, 164, 111, 0.10)', '--border-width': '1px', '--border-radius': '12px', gap: '4px', display: 'flex', flexDirection: 'column', alignItems: 'stretch', paddingLeft: '25px', paddingRight: '25px', paddingTop: '25px', paddingBottom: '28px'}}>
       <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -11,20 +18,18 @@ const LoyaltyGems = () => {
             Loyalty Gems
           </div>
         </div>
-        <div style={{color: 'rgba(15, 15, 15, 0.70)', lineHeight: '20px', width: '59px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', marginTop: '4px', minHeight: '20px'}}>
-          Gold Tier
-        </div>
+        <div style={{color: 'rgba(15, 15, 15, 0.70)', lineHeight: '20px', minHeight: '20px'}}>Gold Tier</div>
       </div>
       <div style={{marginTop: '12px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
         <div style={{color: '#0F0F0F', lineHeight: '20px', width: '93px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px'}}>
           Current Points
         </div>
-        <div style={{color: '#0F0F0F', fontWeight: 500, lineHeight: '20px', width: '80px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px'}}>
-          1,450 / 2,000
+        <div style={{color: '#0F0F0F', fontWeight: 500, lineHeight: '20px'}}>
+          {points} / {nextTier}
         </div>
       </div>
-      <div style={{background: '#F9F5F0', borderRadius: '9999px', overflow: 'hidden', marginTop: '4px', display: 'flex', alignItems: 'flex-start', minHeight: '12px'}}>
-        <div className="image" style={{background: 'linear-gradient(90deg, #BFA46F 0%, #E8E4FF 100%)', width: '275.03px', height: '12px'}}></div>
+      <div style={{background: '#F9F5F0', borderRadius: '9999px', overflow: 'hidden', marginTop: '4px'}}>
+        <div style={{background: 'linear-gradient(90deg, #BFA46F 0%, #E8E4FF 100%)', width: `${progress}%`, height: '12px'}}></div>
       </div>
       <div style={{gap: '24px', display: 'flex', flexDirection: 'column', alignItems: 'stretch'}}>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -41,16 +46,10 @@ const LoyaltyGems = () => {
               Available Carat Credits
             </div>
             <div style={{width: '146px', marginTop: '0.5px', display: 'flex', alignItems: 'flex-start', minHeight: '32px'}}>
-              <div style={{color: '#BFA46F', fontSize: '24px', fontWeight: 700, lineHeight: '32px', width: '52px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '32px'}}>
-                UGX 1,295,000
-              </div>
+              <div style={{color: '#BFA46F', fontSize: '24px', fontWeight: 700, lineHeight: '32px'}}> {points} pts </div>
             </div>
           </div>
-          <div style={{background: '#BFA46F', borderRadius: '6px', display: 'flex', width: '75px', justifyContent: 'center', alignItems: 'center', marginTop: '11.5px', marginBottom: '14.0px', paddingLeft: '12px', paddingRight: '12px', paddingTop: '4px', paddingBottom: '4px'}}>
-            <div style={{color: '#FFFFFF', lineHeight: '20px', textAlign: 'center', width: '51px', justifyContent: 'center', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px'}}>
-              Redeem
-            </div>
-          </div>
+          <button onClick={()=>addPoints(-200)} style={{background: '#BFA46F', color:'#fff', border:'none', borderRadius: 6, padding: '4px 12px', cursor:'pointer', marginTop: '11.5px'}}>Redeem</button>
         </div>
         <div style={{display: 'flex', alignItems: 'flex-start', minHeight: '20px'}}>
           <div style={{color: '#0F0F0F', fontWeight: 500, lineHeight: '20px', width: '123px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '20px'}}>
@@ -65,9 +64,7 @@ const LoyaltyGems = () => {
             Free Gemstone Cleaning
           </div>
           <div style={{width: '156px', display: 'flex', alignItems: 'flex-start', minHeight: '16px'}}>
-            <div style={{color: 'rgba(15, 15, 15, 0.70)', fontSize: '12px', lineHeight: '16px', width: '86px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '16px'}}>
-              100 points away
-            </div>
+            <div style={{color: 'rgba(15, 15, 15, 0.70)', fontSize: '12px', lineHeight: '16px'}}> {Math.max(0, 100 - (points % 100))} points away </div>
           </div>
         </div>
       </div>
@@ -78,11 +75,13 @@ const LoyaltyGems = () => {
             Birthday Gift Voucher
           </div>
           <div style={{width: '138px', display: 'flex', alignItems: 'flex-start', minHeight: '16px'}}>
-            <div style={{color: 'rgba(15, 15, 15, 0.70)', fontSize: '12px', lineHeight: '16px', width: '87px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '16px'}}>
-              300 points away
-            </div>
+            <div style={{color: 'rgba(15, 15, 15, 0.70)', fontSize: '12px', lineHeight: '16px'}}> {Math.max(0, 300 - (points % 300))} points away </div>
           </div>
         </div>
+      </div>
+      <div style={{display:'flex', gap:8, marginTop:8}}>
+        <button onClick={()=>addPoints(50)} style={{background:'transparent', border:'1px solid rgba(0,0,0,0.15)', padding:'6px 10px', borderRadius:6, cursor:'pointer'}}>Add 50 pts</button>
+        <button onClick={()=>addPoints(200)} style={{background:'transparent', border:'1px solid rgba(0,0,0,0.15)', padding:'6px 10px', borderRadius:6, cursor:'pointer'}}>Add 200 pts</button>
       </div>
     </div>
   );

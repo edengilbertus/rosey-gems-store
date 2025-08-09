@@ -66,6 +66,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  pointer-events: none;
   border-width: var(--border-width, 0px);
   border-color: var(--border-color, transparent);
   border-style: var(--border-style, solid);

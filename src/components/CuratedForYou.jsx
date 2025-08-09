@@ -6,34 +6,38 @@ const products = [
   {
     id: 1,
     name: 'Sapphire Rose Gold Ring',
-    price: 'UGX 9,231,250',
+    price: 'UGX 12,000',
     type: 'Ring',
     image: 'https://static.motiffcontent.com/private/resource/image/1982c188556632a-2ffcda2d-691f-437e-8539-71af6b110594.jpeg',
     tag: 'New Arrival',
+    description: 'Rose gold band with sapphire centerpiece.'
   },
   {
     id: 2,
     name: 'Designer Leather Handbag',
-    price: 'UGX 8,880,000',
+    price: 'UGX 95,000',
     type: 'Handbag',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Luxury',
+    description: 'Premium leather handbag with timeless silhouette and ample storage'
   },
   {
     id: 3,
     name: 'Gold Luxury Watch',
-    price: 'UGX 18,500,000',
+    price: 'UGX 95,000',
     type: 'Watch',
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Premium',
+    description: 'Luxe gold-tone watch with minimalist dial.'
   },
   {
     id: 4,
     name: 'Evening Clutch with Crystals',
-    price: 'UGX 4,625,000',
+    price: 'UGX 65,000',
     type: 'Clutch',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Glamorous',
+    description: 'Sparkly crystal-studded clutch for evening looks.'
   },
 ];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 
-const SearchResults = ({ searchQuery, searchResults, addToCart }) => {
+const SearchResults = ({ searchQuery, searchResults, addToCart, onSearch }) => {
   return (
     <div style={{
       background: '#F9F5F0',
@@ -104,6 +104,7 @@ const SearchResults = ({ searchQuery, searchResults, addToCart }) => {
                       cursor: 'pointer',
                       transition: 'all 0.3s ease'
                     }}
+                    onClick={() => onSearch && onSearch(suggestion)}
                     onMouseEnter={(e) => {
                       e.target.style.background = '#BFA46F';
                       e.target.style.color = '#FFFFFF';
@@ -186,7 +187,17 @@ const SearchResults = ({ searchQuery, searchResults, addToCart }) => {
               gap: 'clamp(20px, 4vw, 32px)'
             }}>
               {searchResults.map(product => (
-                <ProductCard key={product.id} product={product} addToCart={addToCart} />
+                <div key={product.id}>
+                  <ProductCard product={product} addToCart={addToCart} />
+                  <div style={{ marginTop: 8, display: 'flex', justifyContent: 'center' }}>
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-product-modal', { detail: { product } }))}
+                      style={{ background: 'transparent', border: '1px solid #BFA46F', color: '#BFA46F', borderRadius: 8, padding: '6px 12px', cursor: 'pointer' }}
+                    >
+                      View Details
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
 

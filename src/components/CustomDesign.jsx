@@ -14,25 +14,25 @@ const CustomDesign = () => {
   });
 
   const categories = [
-    { id: 'ring', name: 'Ring', price: 'From UGX 3,700,000' },
-    { id: 'necklace', name: 'Necklace', price: 'From UGX 2,775,000' },
-    { id: 'earrings', name: 'Earrings', price: 'From UGX 1,850,000' },
-    { id: 'bracelet', name: 'Bracelet', price: 'From UGX 2,220,000' }
+    { id: 'ring', name: 'Ring', price: 'From UGX 12,000' },
+    { id: 'necklace', name: 'Necklace', price: 'From UGX 35,000' },
+    { id: 'earrings', name: 'Earrings', price: 'From UGX 25,000' },
+    { id: 'bracelet', name: 'Bracelet', price: 'From UGX 40,000' }
   ];
 
   const metals = [
-    { id: 'gold', name: '18K Gold', price: '+UGX 925,000' },
-    { id: 'white-gold', name: '18K White Gold', price: '+UGX 1,110,000' },
-    { id: 'platinum', name: 'Platinum', price: '+UGX 1,850,000' },
-    { id: 'rose-gold', name: '18K Rose Gold', price: '+UGX 1,110,000' }
+    { id: 'gold', name: 'Gold Tone', price: '+UGX 10,000' },
+    { id: 'white-gold', name: 'White Gold Tone', price: '+UGX 12,000' },
+    { id: 'platinum', name: 'Platinum Tone', price: '+UGX 15,000' },
+    { id: 'rose-gold', name: 'Rose Gold Tone', price: '+UGX 12,000' }
   ];
 
   const stones = [
-    { id: 'diamond', name: 'Diamond', price: '+UGX 3,700,000' },
-    { id: 'emerald', name: 'Emerald', price: '+UGX 2,775,000' },
-    { id: 'ruby', name: 'Ruby', price: '+UGX 2,590,000' },
-    { id: 'sapphire', name: 'Sapphire', price: '+UGX 2,220,000' },
-    { id: 'pearl', name: 'Pearl', price: '+UGX 925,000' }
+    { id: 'diamond', name: 'Diamond Tone', price: '+UGX 20,000' },
+    { id: 'emerald', name: 'Emerald Tone', price: '+UGX 15,000' },
+    { id: 'ruby', name: 'Ruby Tone', price: '+UGX 15,000' },
+    { id: 'sapphire', name: 'Sapphire Tone', price: '+UGX 12,000' },
+    { id: 'pearl', name: 'Pearl', price: '+UGX 8,000' }
   ];
 
   const handleInputChange = (e) => {
@@ -297,12 +297,8 @@ const CustomDesign = () => {
               }}>
                 Estimated Starting Price
               </div>
-              <div style={{
-                color: '#BFA46F',
-                fontSize: '24px',
-                fontWeight: 700
-              }}>
-                UGX 8,140,000+
+              <div style={{ color: '#BFA46F', fontSize: '24px', fontWeight: 700 }}>
+                UGX 25,000+
               </div>
             </div>
           </div>

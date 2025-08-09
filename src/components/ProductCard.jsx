@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ProductCard.css';
 import QuantitySelector from './QuantitySelector';
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({ product, addToCart, toggleWishlist, isWishlisted }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = () => {
@@ -47,26 +47,49 @@ const ProductCard = ({ product, addToCart }) => {
             >
               <div className="image" data-resource-id="1982ccf9cdd955e-d62ffcf8-c94d-4db5-8f1a-e59a877459eb.svg" style={{backgroundImage: "url('https://static.motiffcontent.com/private/resource/image/1982ccf9cdd955e-d62ffcf8-c94d-4db5-8f1a-e59a877459eb.svg')", '--svg-fill-colors': 'rgb(15, 15, 15)', width: '16px', height: '16px', backgroundSize: 'cover'}}></div>
             </button>
-            <button style={{background: '#FFFFFF', boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)', borderRadius: '9999px', width: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8.89px', paddingBottom: '8.89px', border: 'none', cursor: 'pointer'}}
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-product-modal', { detail: { product } }))}
+              style={{background: '#FFFFFF', boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)', borderRadius: '9999px', width: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8.89px', paddingBottom: '8.89px', border: 'none', cursor: 'pointer'}}
+              title="View Details"
+            >
+              <div className="image" style={{backgroundImage: "url('https://static.motiffcontent.com/private/resource/image/1982ccf9ce40244-1d7d40b5-2a47-4097-b125-5b9a18833347.svg')", '--svg-fill-colors': 'rgb(15, 15, 15)', width: '16px', height: '16px', backgroundSize: 'cover'}}></div>
+            </button>
+            <button 
+              onClick={() => toggleWishlist && toggleWishlist(product)}
+              style={{background: isWishlisted && isWishlisted(product.id) ? 'rgba(191, 164, 111, 0.1)' : '#FFFFFF', boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)', borderRadius: '9999px', width: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingLeft: '8px', paddingRight: '8px', paddingTop: '8.89px', paddingBottom: '8.89px', border: 'none', cursor: 'pointer'}}
               onMouseEnter={(e) => {
                 e.target.style.background = 'rgba(191, 164, 111, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#FFFFFF';
+                e.target.style.background = isWishlisted && isWishlisted(product.id) ? 'rgba(191, 164, 111, 0.1)' : '#FFFFFF';
               }}
               title="Add to Wishlist"
             >
-              <div className="image" data-resource-id="1982ccf9cde9bf6-943dd979-fb33-4760-9b3e-e80128635b24.svg" style={{backgroundImage: "url('https://static.motiffcontent.com/private/resource/image/1982ccf9cde9bf6-943dd979-fb33-4760-9b3e-e80128635b24.svg')", '--svg-fill-colors': 'rgb(15, 15, 15)', width: '16px', height: '14.22px', backgroundSize: 'cover'}}></div>
+              <div className="image" data-resource-id="1982ccf9cde9bf6-943dd979-fb33-4760-9b3e-e80128635b24.svg" style={{backgroundImage: isWishlisted && isWishlisted(product.id) ? "url('https://static.motiffcontent.com/private/resource/image/1982ccf9cd71a39-48c2a6d1-6c0a-4d7e-b3b3-bcbf9b8a67a0.svg')" : "url('https://static.motiffcontent.com/private/resource/image/1982ccf9cde9bf6-943dd979-fb33-4760-9b3e-e80128635b24.svg')", '--svg-fill-colors': isWishlisted && isWishlisted(product.id) ? 'rgb(191, 164, 111)' : 'rgb(15, 15, 15)', width: '16px', height: '14.22px', backgroundSize: 'cover'}}></div>
             </button>
           </div>
         </div>
       </div>
-      <div style={{marginTop: '12px', display: 'flex', alignItems: 'flex-start', minHeight: '24px', paddingLeft: '16px'}}>
-        <div style={{color: '#0F0F0F', fontSize: '16px', fontWeight: 600, lineHeight: '24px', width: '182px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '24px'}}>
+      <div style={{marginTop: '12px', display: 'flex', alignItems: 'flex-start', minHeight: '24px', paddingLeft: '16px', paddingRight: '16px'}}>
+        <div style={{color: '#0F0F0F', fontSize: '16px', fontWeight: 600, lineHeight: '24px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis'}}>
           {product.name}
         </div>
       </div>
-      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingLeft: '16px', paddingRight: '16px'}}>
+      {(
+        product.description || product.type || product.collection
+      ) && (
+        <div style={{
+          paddingLeft: '16px',
+          paddingRight: '16px',
+          marginTop: '4px',
+          color: 'rgba(15, 15, 15, 0.70)',
+          fontSize: '13px',
+          lineHeight: '18px'
+        }}>
+          {product.description || `Premium ${product.type || 'item'}${product.collection ? ` · ${product.collection}` : ''}`}
+        </div>
+      )}
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', paddingLeft: '16px', paddingRight: '16px', marginTop: '8px'}}>
         <div style={{color: '#BFA46F', fontSize: '16px', fontWeight: 700, lineHeight: '24px', width: '47px', alignItems: 'center', display: 'flex', textOverflow: 'ellipsis', minHeight: '24px'}}>
           {product.price}
         </div>

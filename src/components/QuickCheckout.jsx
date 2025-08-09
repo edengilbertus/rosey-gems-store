@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import './QuickCheckout.css';
 
 const QuickCheckout = () => {
-  const [giftMessage, setGiftMessage] = useState('');
-  const [selectedPayment, setSelectedPayment] = useState('');
+  const [giftMessage, setGiftMessage] = useState(localStorage.getItem('giftMessage') || '');
+  const [selectedPayment, setSelectedPayment] = useState(localStorage.getItem('selectedPayment') || '');
+  const [shippingMethod, setShippingMethod] = useState(localStorage.getItem('shippingMethod') || 'express');
+  const [phone, setPhone] = useState(localStorage.getItem('momoPhone') || '');
+
+  const persist = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
 
   const handleCompletePurchase = () => {
-    console.log('Completing purchase...');
-    alert('Purchase would be completed here in a real implementation');
+    const summary = {
+      payment: selectedPayment,
+      giftMessage: giftMessage ? 'Yes' : 'No',
+      shipping: shippingMethod,
+      momoPhone: selectedPayment === 'mtn-momo' ? phone : undefined
+    };
+    alert(`Order Summary\nPayment: ${summary.payment}\nShipping: ${summary.shipping}\nGift Message: ${summary.giftMessage}\n${summary.momoPhone ? 'MTN MoMo: '+summary.momoPhone : ''}`);
   };
 
   const handleContactConcierge = () => {
@@ -81,6 +90,7 @@ const QuickCheckout = () => {
           <div style={{gap: '12px', display: 'flex', flexDirection: 'row', alignItems: 'stretch', flexWrap: 'wrap'}}>
             <button 
               onClick={() => setSelectedPayment('apple')}
+              onBlur={() => persist('selectedPayment', 'apple')}
               style={{
                 background: selectedPayment === 'apple' ? '#FFFFFF' : '#2A2A2A', 
                 borderRadius: '8px', 
@@ -113,6 +123,7 @@ const QuickCheckout = () => {
             
             <button 
               onClick={() => setSelectedPayment('google')}
+              onBlur={() => persist('selectedPayment', 'google')}
               style={{
                 background: selectedPayment === 'google' ? '#FFFFFF' : '#1E1E1E', 
                 borderRadius: '8px', 
@@ -145,6 +156,7 @@ const QuickCheckout = () => {
             
             <button 
               onClick={() => setSelectedPayment('crypto')}
+              onBlur={() => persist('selectedPayment', 'crypto')}
               style={{
                 background: selectedPayment === 'crypto' ? '#FFFFFF' : '#1E1E1E', 
                 borderRadius: '8px', 
@@ -174,6 +186,53 @@ const QuickCheckout = () => {
                 Crypto
               </div>
             </button>
+
+            <button 
+              onClick={() => setSelectedPayment('mtn-momo')}
+              onBlur={() => persist('selectedPayment', 'mtn-momo')}
+              style={{
+                background: selectedPayment === 'mtn-momo' ? '#FFFFFF' : '#1E1E1E', 
+                borderRadius: '8px', 
+                display: 'flex', 
+                minWidth: '140px', 
+                gap: '8px', 
+                alignItems: 'center', 
+                flexDirection: 'row', 
+                padding: '12px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <div className="image" style={{
+                backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/4/4d/MTN-Logo.png')",
+                width: '20px', 
+                height: '20px', 
+                backgroundSize: 'cover',
+                backgroundColor: '#fff',
+                borderRadius: 4
+              }}></div>
+              <div style={{
+                color: selectedPayment === 'mtn-momo' ? '#000000' : '#FFFFFF', 
+                fontSize: 'clamp(12px, 2vw, 14px)',
+                lineHeight: '20px'
+              }}>
+                MTN Mobile Money
+              </div>
+            </button>
+
+            {selectedPayment === 'mtn-momo' && (
+              <div style={{ width: '100%', marginTop: 8, display:'flex', gap:8, alignItems:'center' }}>
+                <input
+                  type="tel"
+                  placeholder="Enter MTN MoMo number"
+                  value={phone}
+                  onChange={(e)=>{ setPhone(e.target.value); persist('momoPhone', e.target.value); }}
+                  style={{ flex:1, padding:'8px 12px', borderRadius:6, border:'1px solid rgba(255,255,255,0.2)', background:'#2A2A2A', color:'#fff' }}
+                />
+                <button onClick={()=>alert('MoMo number verified')} style={{ background:'#BFA46F', border:'none', color:'#fff', borderRadius:6, padding:'8px 12px', cursor:'pointer' }}>Verify</button>
+              </div>
+            )}
           </div>
           
           <button style={{
@@ -218,7 +277,7 @@ const QuickCheckout = () => {
           </div>
           <textarea
             value={giftMessage}
-            onChange={(e) => setGiftMessage(e.target.value)}
+            onChange={(e) => { setGiftMessage(e.target.value); persist('giftMessage', e.target.value); }}
             placeholder="Write your personalized message here..."
             style={{
               background: '#2A2A2A', 
@@ -318,6 +377,11 @@ const QuickCheckout = () => {
             </div>
           </div>
           
+          <div style={{ display:'flex', gap:8 }}>
+            <button onClick={()=>{ setShippingMethod('express'); persist('shippingMethod','express'); }} style={{ background: shippingMethod==='express' ? '#BFA46F' : 'transparent', border:'1px solid #BFA46F', color:'#fff', borderRadius:6, padding:'8px 12px', cursor:'pointer' }}>Express</button>
+            <button onClick={()=>{ setShippingMethod('standard'); persist('shippingMethod','standard'); }} style={{ background: shippingMethod==='standard' ? '#BFA46F' : 'transparent', border:'1px solid #BFA46F', color:'#fff', borderRadius:6, padding:'8px 12px', cursor:'pointer' }}>Standard</button>
+          </div>
+
           <button 
             onClick={handleCompletePurchase}
             style={{

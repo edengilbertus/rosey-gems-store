@@ -5,12 +5,13 @@ const bestsellersData = [
   {
     id: 1,
     name: 'Classic Diamond Solitaire',
-    price: 'UGX 9,250,000',
+    price: 'UGX 14,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: '#1 Bestseller',
     salesCount: 127,
-    rating: 4.9
+    rating: 4.9,
+    description: 'Timeless solitaire ring with brilliant-cut sparkle.'
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const bestsellersData = [
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Customer Favorite',
     salesCount: 89,
-    rating: 4.8
+    rating: 4.8,
+    description: 'Lustrous pearl-look strand for classic elegance.'
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const bestsellersData = [
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Top Rated',
     salesCount: 156,
-    rating: 4.9
+    rating: 4.9,
+    description: 'Everyday sparkle with classic diamond-look studs.'
   },
   {
     id: 4,
@@ -40,17 +43,19 @@ const bestsellersData = [
     image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Most Popular',
     salesCount: 203,
-    rating: 4.7
+    rating: 4.7,
+    description: 'Bold gold-tone chain bracelet with luxe finish.'
   },
   {
     id: 5,
     name: 'Eternity Band Ring',
-    price: 'UGX 7,770,000',
+    price: 'UGX 10,000',
     type: 'Ring',
     image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Trending',
     salesCount: 74,
-    rating: 4.8
+    rating: 4.8,
+    description: 'Pavé-style eternity band with continuous shine.'
   },
   {
     id: 6,
@@ -60,7 +65,8 @@ const bestsellersData = [
     image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Classic Choice',
     salesCount: 45,
-    rating: 4.6
+    rating: 4.6,
+    description: 'Vintage-inspired cameo brooch with ornate trim.'
   }
 ];
 
@@ -258,7 +264,9 @@ const Bestsellers = ({ addToCart }) => {
                   }}>
                   Add to Cart
                 </button>
-                <button style={{
+                <button 
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-product-modal', { detail: { product: bestsellersData[0] } }))}
+                  style={{
                   background: 'transparent',
                   border: '1px solid #BFA46F',
                   borderRadius: '8px',
