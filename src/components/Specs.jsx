@@ -29,6 +29,18 @@ const eyewear = [
     tag: 'New',
     collection: 'Modern',
     description: 'Luxury optical frames with subtle blue-light filter and premium detailing.'
+  },
+  { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear',
+    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
+    images: [
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-7.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-8.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-9.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-20.jpg`
+    ],
+    tag: 'New',
+    collection: 'Modern',
+    description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.'
   }
 ];
 
