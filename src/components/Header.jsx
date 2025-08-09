@@ -44,7 +44,7 @@ const Header = ({ currentPage, setCurrentPage, cartItemCount, setIsCartOpen, onS
             cursor: 'pointer'
           }}>
           <img 
-            src="/logo.svg" 
+            src={`${process.env.PUBLIC_URL}/logo.svg`} 
             alt="Rosey Gems" 
             style={{
               height: 'clamp(32px, 5vw, 48px)',

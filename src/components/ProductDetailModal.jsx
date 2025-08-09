@@ -10,8 +10,11 @@ const ProductDetailModal = ({
   isWishlisted
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const images = (product.images && product.images.length ? product.images : [product.image]).filter(Boolean);
+  const images = (
+    (product?.images && product.images.length ? product.images : [product?.image])
+  ).filter(Boolean);
   const [activeIndex, setActiveIndex] = useState(0);
+
   if (!isOpen || !product) return null;
 
   const wishlisted = isWishlisted && isWishlisted(product.id);
