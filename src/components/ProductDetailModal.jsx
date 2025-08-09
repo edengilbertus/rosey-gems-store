@@ -10,9 +10,12 @@ const ProductDetailModal = ({
   isWishlisted
 }) => {
   const [quantity, setQuantity] = useState(1);
-  const images = (
-    (product?.images && product.images.length ? product.images : [product?.image])
-  ).filter(Boolean);
+  const images = (() => {
+    const gallery = Array.isArray(product?.images) ? product.images : [];
+    const primary = product?.image ? [product.image] : [];
+    const merged = [...primary, ...gallery].filter(Boolean);
+    return merged.length ? merged : [`${process.env.PUBLIC_URL}/logo512.png`];
+  })();
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (!isOpen || !product) return null;

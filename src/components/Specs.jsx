@@ -18,6 +18,19 @@ const eyewear = [
     tag: 'New',
     collection: 'Modern',
     description: 'Photochromic anti-blue light lenses in bold cat-eye frames. Color options include red, pink/tortoise, white and black.'
+  },
+  { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear',
+    image: `${process.env.PUBLIC_URL}/assets/eyewear/image-1.jpg`,
+    images: [
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-4.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-5.jpg`,
+      `${process.env.PUBLIC_URL}/assets/eyewear/image-16.jpg`
+    ],
+    tag: 'New',
+    collection: 'Modern',
+    description: 'Luxury optical frames with subtle blue-light filter and premium detailing.'
   }
 ];
 
