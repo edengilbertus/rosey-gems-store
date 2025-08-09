@@ -16,7 +16,7 @@ const collectionsData = [
   {
     id: 2,
     name: 'Vintage Pearl Necklace',
-    price: 'UGX 4,625,000',
+    price: 'UGX 60,000',
     type: 'Necklace',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: null,
@@ -26,7 +26,7 @@ const collectionsData = [
   {
     id: 3,
     name: 'Sapphire Drop Earrings',
-    price: 'UGX 3,700,000',
+    price: 'UGX 40,000',
     type: 'Earrings',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'New',
@@ -36,7 +36,7 @@ const collectionsData = [
   {
     id: 4,
     name: 'Gold Tennis Bracelet',
-    price: 'UGX 5,550,000',
+    price: 'UGX 75,000',
     type: 'Bracelet',
     image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Luxury',
@@ -56,7 +56,7 @@ const collectionsData = [
   {
     id: 6,
     name: 'Rose Gold Pendant',
-    price: 'UGX 2,775,000',
+    price: 'UGX 35,000',
     type: 'Necklace',
     image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Trending',
@@ -68,7 +68,7 @@ const collectionsData = [
   {
     id: 7,
     name: 'Designer Leather Handbag',
-    price: 'UGX 8,880,000',
+    price: 'UGX 95,000',
     type: 'Handbag',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Luxury',
@@ -78,7 +78,7 @@ const collectionsData = [
   {
     id: 8,
     name: 'Crocodile Clutch Bag',
-    price: 'UGX 12,950,000',
+    price: 'UGX 85,000',
     type: 'Clutch',
     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Exclusive',
@@ -88,7 +88,7 @@ const collectionsData = [
   {
     id: 9,
     name: 'Vintage Leather Satchel',
-    price: 'UGX 6,660,000',
+    price: 'UGX 66,600',
     type: 'Satchel',
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     collection: 'Vintage',
@@ -97,7 +97,7 @@ const collectionsData = [
   {
     id: 10,
     name: 'Evening Clutch with Crystals',
-    price: 'UGX 4,625,000',
+    price: 'UGX 65,000',
     type: 'Clutch',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Glamorous',
@@ -109,7 +109,7 @@ const collectionsData = [
   {
     id: 11,
     name: 'Gold Luxury Watch',
-    price: 'UGX 18,500,000',
+    price: 'UGX 95,000',
     type: 'Watch',
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Premium',
@@ -119,7 +119,7 @@ const collectionsData = [
   {
     id: 12,
     name: 'Silk Designer Scarf',
-    price: 'UGX 1,850,000',
+    price: 'UGX 50,000',
     type: 'Scarf',
     image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3',
     tag: 'Elegant',
@@ -130,10 +130,15 @@ const collectionsData = [
 
 const Collections = ({ addToCart }) => {
   const [selectedFilter, setSelectedFilter] = useState('All');
+  const [query, setQuery] = useState('');
 
+  const normalized = (s) => (s || '').toLowerCase();
   const filteredProducts = collectionsData.filter(product => {
-    if (selectedFilter === 'All') return true;
-    return product.collection === selectedFilter;
+    const matchesCollection = selectedFilter === 'All' || product.collection === selectedFilter;
+    const matchesQuery = !query.trim() ||
+      normalized(product.name).includes(normalized(query)) ||
+      normalized(product.type).includes(normalized(query));
+    return matchesCollection && matchesQuery;
   });
   return (
     <div style={{
@@ -172,7 +177,7 @@ const Collections = ({ addToCart }) => {
           </p>
         </div>
 
-        {/* Filter Section */}
+        {/* Filter / Search Section */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -210,6 +215,18 @@ const Collections = ({ addToCart }) => {
               {filter}
             </button>
           ))}
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search collections (e.g., ring, tote)"
+            style={{
+              minWidth: '220px',
+              padding: '8px 12px',
+              border: '1px solid rgba(191, 164, 111, 0.3)',
+              borderRadius: '8px',
+              background: 'rgba(255, 255, 255, 0.7)'
+            }}
+          />
         </div>
 
         {/* Filter Results Info */}
