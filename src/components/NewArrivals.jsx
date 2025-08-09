@@ -61,6 +61,16 @@ const newArrivalsData = [
     tag: 'Fresh',
     arrivalDate: '2024-01-01',
     description: 'Premium earrings with aquamarine tone.'
+  },
+  {
+    id: 401,
+    name: 'Leaf Stud Earrings',
+    price: 'UGX 6,000',
+    type: 'Earrings',
+    image: `${process.env.PUBLIC_URL}/assets/earrings/leaf-stud-1.jpg`,
+    tag: 'New',
+    arrivalDate: '2025-08-09',
+    description: 'Leaf-inspired statement studs in multiple finishes.'
   }
 ];
 
