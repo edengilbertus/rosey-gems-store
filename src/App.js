@@ -184,6 +184,17 @@ function App() {
       `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-2.jpg`,
       `${process.env.PUBLIC_URL}/assets/bracelets/arm-cuffs-3.jpg`
     ] },
+    { id: 406, name: 'Beaded Bracelets', price: 'UGX 5,000', type: 'Bracelet', image: `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-1.jpg`, collection: 'Classic', tag: 'New', description: 'Colorful beaded bracelet set.', images: [
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-1.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-2.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-3.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-4.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-5.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-6.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-7.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-8.jpg`,
+      `${process.env.PUBLIC_URL}/assets/bracelets/beaded-bracelet-9.jpg`
+    ] },
     { id: 305, name: 'Luxury Optical Spectacles', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/image-3.jpg`, collection: 'Modern', tag: 'New', description: 'Luxury optical frames with subtle blue-light filter and premium detailing.' },
     { id: 306, name: 'Optical Frames', price: 'UGX 30,000', type: 'Eyewear', image: `${process.env.PUBLIC_URL}/assets/eyewear/optical-frames-2.jpg`, collection: 'Modern', tag: 'New', description: 'Classic optical frames in a squared silhouette, lightweight and comfortable.' }
   ];
