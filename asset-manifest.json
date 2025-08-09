@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rosey-gems-store/static/css/main.70e04d8d.css",
+    "main.css": "/rosey-gems-store/static/css/main.22c7907b.css",
     "main.js": "/rosey-gems-store/static/js/main.a829f76d.js",
     "static/js/453.72a0d291.chunk.js": "/rosey-gems-store/static/js/453.72a0d291.chunk.js",
     "index.html": "/rosey-gems-store/index.html",
-    "main.70e04d8d.css.map": "/rosey-gems-store/static/css/main.70e04d8d.css.map",
+    "main.22c7907b.css.map": "/rosey-gems-store/static/css/main.22c7907b.css.map",
     "main.a829f76d.js.map": "/rosey-gems-store/static/js/main.a829f76d.js.map",
     "453.72a0d291.chunk.js.map": "/rosey-gems-store/static/js/453.72a0d291.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70e04d8d.css",
+    "static/css/main.22c7907b.css",
     "static/js/main.a829f76d.js"
   ]
 }
